@@ -76,7 +76,7 @@ listCount(arr);
 -----------------
      */
     function listCount(arr){
-        arr.reduce(function(a, b){
+        return arr.reduce(function(a, b){
             a[b] = a[b] ? a[b] + 1 : 1;
             return a;
         }, {});
@@ -84,6 +84,13 @@ listCount(arr);
     /* ES6 ver.
     var listCounter = (arr) => arr.reduce((a, b) => { a[b] = a[b] ? a[b] + 1 : 1; return a; }, {});
     */
+
+    function listmaxCounter(arr)
+        return arr.reduce(function(a, b){
+            a.obj[b] = a.obj[b] ? a.obj[b] + 1 : 1;
+            a.cnt = a.obj[b] > a.cnt ? a.obj[b] : a.cnt;
+        return a;
+    }, {cnt:0, obj:{}});
 
     /**
      * リスト内のネスト(MAX2段階)した配列を平坦化する
@@ -150,6 +157,7 @@ uniqRangeChecker([1,3], [3,5]);
       crange: cRange,
       searchobj: searchObj,
       listcount: listCount,
+      listmaxcounter: listmaxCounter,
       flatter: flatter,
       uniqRangeChecker: uniqRangeChecker,
       refcut: refCut
