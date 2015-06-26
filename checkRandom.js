@@ -1,6 +1,7 @@
 console.log(checkRandom(100, 1, 4));
 /**
  * 乱数が偏らないか自分で確認する為の関数
+ * return hash
  */
 function checkRandom(repeatCnt, lo, hi){
   var stok = {}, cnt = 0;
